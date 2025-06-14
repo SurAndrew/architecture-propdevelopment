@@ -1,0 +1,17 @@
+# rolebinding_ro.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  namespace: prop-development
+  name: pod-ro
+subjects:
+- kind: User
+  name: developer1
+  apiGroup: rbac.authorization.k8s.io
+- kind: User
+  name: serviceman
+  apiGroup: rbac.authorization.k8s.io  
+roleRef:
+  kind: Role
+  name: ro-pod
+  apiGroup: rbac.authorization.k8s.io

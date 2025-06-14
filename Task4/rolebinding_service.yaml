@@ -1,0 +1,14 @@
+# rolebinding_service.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  namespace: prop-development
+  name: man-service
+subjects:
+- kind: User
+  name: devopsuser1
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: services
+  apiGroup: rbac.authorization.k8s.io
